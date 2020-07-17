@@ -1,16 +1,25 @@
-from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
+from app import db
 
-from app import app, db
-import os
+class Book(db.Model):
+    __tablename__ = 'books'
 
-app.config.from_object(os.getenv['APP_SETTINGS'])
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    author = db.Column(db.String())
+    published = db.Column(db.String())
 
-migrate = Migrate(app, db)
-manager = Manager(app)
+    def __init__(self, name, author, published):
+        self.name = name
+        self.author = author
+        self.published = published
 
-manager.add_command('db', MigrateCommand)
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
 
-
-if __name__ == '__main__':
-    manager.run()
+    def serialize(self):
+        return {
+            'id': self.id, 
+            'name': self.name,
+            'author': self.author,
+            'published':self.published
+        }

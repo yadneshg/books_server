@@ -5,9 +5,9 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.getenv['SECRET_KEY']
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL1']
-
+    print(SECRET_KEY)
 
 class ProductionConfig(Config):
     DEBUG = False

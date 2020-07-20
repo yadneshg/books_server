@@ -8,7 +8,7 @@ class Config(object):
 
     SECRET_KEY = 'this-really-needs-to-be-changed'
     #SQLALCHEMY_DATABASE_URI = "postgresql://postgres:Cyber123@localhost:5432/db01"
-    SQLALCHEMY_DATABASE_URI = os.getenv['DATABASE_URL1']
+    SQLALCHEMY_DATABASE_URI = os.getenv['DATABASE_URL']
 
 
 class ProductionConfig(Config):

@@ -2,7 +2,6 @@ import os
 from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
-import config
 
 app = Flask(__name__)
 

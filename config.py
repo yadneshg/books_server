@@ -9,6 +9,8 @@ class Config(object):
     SECRET_KEY = os.environ['SECRET_KEY']
     #SQLALCHEMY_DATABASE_URI = "postgresql://postgres:Cyber123@localhost:5432/db01"
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL1']
+    print(f"SQLALCHEMY_DATABASE_URI : {SQLALCHEMY_DATABASE_URI}")
+    print(f"SECRET_KEY : {SECRET_KEY}")
 
 
 class ProductionConfig(Config):

@@ -7,8 +7,8 @@ class Config(object):
     CSRF_ENABLED = True
 
     SECRET_KEY = 'this-really-needs-to-be-changed'
-    #SQLALCHEMY_DATABASE_URI = "postgresql://postgres:Cyber123@localhost:5432/db01"
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL1']
+    SQLALCHEMY_DATABASE_URI = "postgresql://postgres:Cyber123@localhost:5432/db01"
+    #SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL1']
     print(f"SQLALCHEMY_DATABASE_URI : {SQLALCHEMY_DATABASE_URI}")
     print(f"SECRET_KEY : {SECRET_KEY}")
 

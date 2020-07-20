@@ -1,14 +1,14 @@
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, config
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 
-app.config.from_object(os.environ['APP_SETTINGS'])
+#app.config.from_object(os.environ['APP_SETTINGS'])
 print(f"App_Settings = {os.environ['APP_SETTINGS']}")
 
-#app.config.from_object(config.DevelopmentConfig)
+app.config.from_object(config.DevelopmentConfig)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

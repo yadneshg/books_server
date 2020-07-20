@@ -1,6 +1,5 @@
 from app import db
 
-
 class Book(db.Model):
     __tablename__ = 'books'
 
@@ -22,5 +21,5 @@ class Book(db.Model):
             'id': self.id,
             'name': self.name,
             'author': self.author,
-            'published': self.published
+            'published':self.published
         }
